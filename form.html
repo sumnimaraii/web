@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <label for="full_name">Name</label>
+        <input type="text" id="full_name" name="fname" onkeyup="name_validate()">
+        <span id="name_msg"></span>
+        <br>
+
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" name="phone" onkeyup="phone_validate()">
+        <span id="phone_num"></span>
+        <br>
+
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" onkeyup="email_validate()">
+        <span id="email_text"></span>
+        <br>
+
+        <label for="passwoed">Password</label>
+        <input type="text" id="passwoed" name="passwoed" onkeyup="pass_validate()">
+        <span id="pass_text"></span>
+        <br>
+
+        <button id="Submit">Submit</button>
+        
+     </form>
+     <script>
+        let namemsg=document.getElementById("name_msg")
+        function name_validate(){
+            let fullname=document.getElementById("full_name").value
+            if(!fullname.match(/^[a-z]{3,}$/))
+            {
+                namemsg.innerHTML="Name must be only alphabets and at least three characters"
+                namemsg.style.color="red"
+            }
+            else{
+                namemsg.innerHTML="Vaild name"
+                namemsg.style.color="green"
+            }
+        }
+
+        let phonenum=document.getElementById("phone_num")
+        function phone_validate(){
+            let phone=document.getElementById("phone").value
+            if(!phone.match(/^98[0-9]{8}$/))
+            {
+                phonenum.innerHTML="There should be ten numbers"
+                phonenum.style.color="red"
+            }
+            else{
+                phonenum.innerHTML="Valid phone number"
+                phonenum.style.color="green"
+            }
+        }
+        
+        let emailtext=document.getElementById("email_text")
+        function email_validate(){
+            let email=document.getElementById("email").value
+            if(!email.match(/^[a-z][a-z 0-9._]*(@)(gmail)[.](com)$/))
+            {
+                emailtext.innerHTML="There should be specific charecters and numbers in the email"
+                emailtext.style.color="pink"
+            }
+            else{
+                emailtext.innerHTML="Invalid email"
+                emailtext.style.color="red"
+            }
+        }
+
+        let passmsg=document.getElementById("pass_text")
+        function pass_validate(){
+            let pass=document.getElementById("password").value
+            if(!pass.match(/[a-z]/)){
+                passmsg="Password must contain at least one lower case letter"
+                passmsg.style.color="black"
+            }
+            else if(!pass.match(/[A-Z]/)){
+                passmsg="Password must contain at least one upper case letter"
+                passmsg.style.color="blue"
+            }
+            "Password must contain at least one upper case letter"
+                passmsg.style.color="red"
+
+
+        }
+
+
+    </script>
+
+</body>
+</html>
+
